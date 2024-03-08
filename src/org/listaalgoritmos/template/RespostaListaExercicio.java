@@ -21,7 +21,9 @@ public class RespostaListaExercicio {
 	 */
 	public static float calcularImc(float peso, float altura) 
 	{
-		return 0f;
+		float calcularImc = (peso / (altura * altura)); 
+		
+		return calcularImc;
 	}
 	
 	/**
@@ -34,7 +36,9 @@ public class RespostaListaExercicio {
 	 */
 	public static float calcularAreaTrapezio(float baseMaior, float baseMenor, float altura) 
 	{	
-		return 0f;
+		float calcularAreaTrapezio = ((baseMaior + baseMenor) * altura) /2;
+				
+		return calcularAreaTrapezio;
 	}
 	
 	/**
@@ -47,7 +51,13 @@ public class RespostaListaExercicio {
 	 */
 	public static int maiorEntreDoisInteiros(int a, int b) 
 	{
-		return 0;
+		if(a > b) {
+			return a;
+		}else if (b > a){
+			return b;
+		}else {
+			return 0;
+		}
 	}
 	
 	/**
@@ -59,7 +69,11 @@ public class RespostaListaExercicio {
 	 */
 	public static boolean verificarParImpar(int numero) 
 	{
-		return false;		
+		if(numero %2 == 0) {
+			return true;
+		}else {
+			return false;
+		}
 	}
 	
 	/**
@@ -68,9 +82,16 @@ public class RespostaListaExercicio {
 	 * @param notas
 	 * @return media
 	 */
-	public static float calcularMediaNotas(float[] notas) {
-		return 0f;
+	public static float calcularMediaNotas(float[] notas) 
+	{
+        float soma = 0.0f;
+        for (float num : notas) {
+            soma += num;
+        }
+        float media = soma / notas.length;
+        return  media;
 	}
+		 
 	
 	/**
 	 * Método imprime array de inteiros no sentido inverso, separando os elementos por vírgula.
@@ -80,7 +101,13 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirArrayInverso(int[] array)
 	{
-		System.out.print("");
+
+	        for (int i = array.length - 1; i >= 0; i--) {
+	            System.out.print(array[i]);
+	            if (i != 0) {
+	                System.out.print(",");
+	            }
+	        }
 	}
 	
 	/**
@@ -91,10 +118,12 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirElementosPrimos(int[] array) 
 	{
-		System.out.print("");
+
+	        System.out.println();
 	}
 	
 	
+
 	/**
 	 * Método deve imprimir os elementos ímpares de um array de inteiros. O formato da impressão 
 	 * deve ser feito numa única linha, utilizando espaço em branco (" ") entre os elementos e 
@@ -103,7 +132,11 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirElementosImpares(int[] array) 
 	{
-		System.out.print("");
+		for (int num : array) {
+            if (num % 2 != 0) {
+                System.out.print(num + " ");
+            }
+        }
 	}
 	
 	
@@ -115,7 +148,11 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirElementosPares(int[] array) 
 	{
-		System.out.print("");
+		for (int num : array) {
+            if (num % 2 == 0) {
+                System.out.print(num + " ");
+            }
+        }
 	}
 	
 	
@@ -127,7 +164,20 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirMaiorMenorElemento(int[] array) 
 	{
-		System.out.print("");
+		
+		 int min = array[0];
+	        int max = array[0];
+	        
+	        for (int i = 1; i < array.length; i++) {
+	            if (array[i] < min) {
+	                min = array[i];
+	            }
+	            if (array[i] > max) {
+	                max = array[i];
+	            }
+	        }
+	        
+	        System.out.print(min + " " + max + " ");
 	}
 	
 	/**
@@ -138,7 +188,12 @@ public class RespostaListaExercicio {
 	 */
 	public static float calcularMediaAritmetica(int[] array) 
 	{
-		return 0f;
-	}
-	
+		int sum = 0;
+        for (int i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
+        return sum / array.length;
+    }
 }
+	
+
